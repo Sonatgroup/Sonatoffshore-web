@@ -545,7 +545,9 @@ a {
 
 .about-founder__copy {
   display: grid;
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+  row-gap: 18px;
   color: var(--color-slate-blue);
   font-size: 17px;
   letter-spacing: -0.4px;
@@ -5533,6 +5535,7 @@ a {
   }
 
   .about-founder__copy {
+    grid-template-columns: 1fr;
     font-size: 16px;
     line-height: 1.6;
   }
