@@ -6867,7 +6867,6 @@ body.legal-page main {
   letter-spacing: -0.48px;
   line-height: 20px;
   text-decoration: none;
-  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
   white-space: nowrap;
 }
 
@@ -7485,6 +7484,7 @@ body.legal-page main {
   letter-spacing: -0.48px;
   line-height: 20px;
   text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
   white-space: nowrap;
 }
 
