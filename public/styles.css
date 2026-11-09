@@ -547,11 +547,16 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 40px;
-  row-gap: 18px;
   color: var(--color-slate-blue);
   font-size: 17px;
   letter-spacing: -0.4px;
   line-height: 1.65;
+}
+
+.about-founder__column {
+  display: grid;
+  align-content: start;
+  gap: 18px;
 }
 
 .about-founder__copy p,
@@ -561,7 +566,6 @@ a {
 
 .about-founder__signature {
   display: flex;
-  margin-top: 28px;
   flex-direction: column;
   color: var(--color-navy);
   font-size: 16px;
