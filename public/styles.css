@@ -489,6 +489,52 @@ a {
   background: var(--color-gold);
 }
 
+.about-founder {
+  max-width: 1120px;
+  margin: 72px auto 0;
+  padding-top: 40px;
+  border-top: 1px solid #c7c7c4;
+}
+
+.about-founder h3 {
+  margin: 0 0 24px;
+  color: var(--color-navy);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1.4px;
+  line-height: 1.2;
+}
+
+.about-founder__copy {
+  display: grid;
+  gap: 18px;
+  color: var(--color-slate-blue);
+  font-size: 17px;
+  letter-spacing: -0.4px;
+  line-height: 1.65;
+}
+
+.about-founder__copy p,
+.about-founder__signature {
+  margin: 0;
+}
+
+.about-founder__signature {
+  display: flex;
+  margin-top: 28px;
+  flex-direction: column;
+  color: var(--color-navy);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-founder__signature strong {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .capabilities {
   min-height: 1848px;
   padding: 32px;
@@ -5767,10 +5813,19 @@ a {
   text-transform: capitalize;
 }
 
+.services-page-hero__content h1 span {
+  display: block;
+  color: #fff;
+}
+
+.services-page-hero__content h1 span + span {
+  color: var(--color-gold);
+}
+
 .services-page-hero__content p {
   width: min(527px, 100%);
   margin: 0;
-  color: #000;
+  color: #fff;
   font-family: "IBM Plex Sans", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
