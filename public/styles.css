@@ -496,6 +496,34 @@ a {
   border-top: 1px solid #c7c7c4;
 }
 
+.about-founder-section {
+  padding: 48px 76px 32px;
+  color: var(--color-navy);
+  background: var(--color-dark-pearl);
+}
+
+.about-founder-section__inner {
+  width: 100%;
+  max-width: 1768px;
+  margin: 0 auto;
+}
+
+.about-founder-section__inner > h2 {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--color-navy);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -2.52px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.about-founder-section .about-founder {
+  margin-top: 32px;
+}
+
 .about-founder h3 {
   margin: 0 0 24px;
   color: var(--color-navy);
@@ -5215,6 +5243,15 @@ a {
     height: 900px;
   }
 
+  .about-founder-section {
+    padding: 40px 40px 24px;
+  }
+
+  .about-founder-section__inner > h2 {
+    font-size: 32px;
+    letter-spacing: -2px;
+  }
+
   .about-page-header,
   .about-page-header.site-header--fixed {
     top: 12px;
@@ -5454,6 +5491,30 @@ a {
 
   .about-page-hero {
     height: 820px;
+  }
+
+  .about-founder-section {
+    padding: 32px 18px 18px;
+  }
+
+  .about-founder-section__inner > h2 {
+    font-size: 29px;
+    letter-spacing: -1.7px;
+  }
+
+  .about-founder-section .about-founder {
+    margin-top: 24px;
+    padding-top: 28px;
+  }
+
+  .about-founder h3 {
+    font-size: 24px;
+    letter-spacing: -1.2px;
+  }
+
+  .about-founder__copy {
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   .about-page-hero__content {
