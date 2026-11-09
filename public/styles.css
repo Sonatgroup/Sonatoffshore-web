@@ -7395,6 +7395,140 @@ body.legal-page main {
   margin-bottom: 10px;
 }
 
+.assetos-plans__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.assetos-plan-card {
+  display: flex;
+  min-height: 410px;
+  padding: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #e0e0e0;
+  border-radius: 22px;
+  color: var(--color-navy);
+  background: var(--color-dark-pearl);
+}
+
+.assetos-plan-card__chip {
+  display: inline-flex;
+  min-height: 30px;
+  padding: 0 14px;
+  align-items: center;
+  border-radius: 999px;
+  color: var(--color-navy);
+  background: var(--color-light);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.assetos-plan-card__price {
+  margin-top: 24px;
+  color: var(--color-navy);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.assetos-plan-card > p {
+  margin: 12px 0 0;
+  color: var(--color-slate-blue);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.assetos-plan-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 24px;
+  padding-left: 20px;
+  color: var(--color-slate-blue);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.assetos-plan-card > a {
+  display: inline-flex;
+  min-height: 46px;
+  margin-top: auto;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--color-light);
+  background: var(--color-navy);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.assetos-plan-card--featured {
+  border-color: var(--color-navy);
+  color: var(--color-light);
+  background: var(--color-navy);
+}
+
+.assetos-plan-card--featured .assetos-plan-card__chip {
+  color: var(--color-navy);
+  background: var(--color-dark-pearl);
+}
+
+.assetos-plan-card--featured .assetos-plan-card__price,
+.assetos-plan-card--featured h3 {
+  color: #f3f3f3;
+}
+
+.assetos-plan-card--featured > p,
+.assetos-plan-card--featured ul {
+  color: var(--color-light-blue);
+}
+
+.assetos-plan-card--featured > a {
+  color: var(--color-navy);
+  background: var(--color-gold);
+}
+
+.assetos-plans__contact {
+  display: flex;
+  margin-top: 20px;
+  padding: 24px 28px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+  background: var(--color-dark-pearl);
+}
+
+.assetos-plans__contact h3 {
+  margin: 0;
+  color: var(--color-navy);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+
+.assetos-plans__contact p {
+  margin: 6px 0 0;
+  color: var(--color-slate-blue);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.assetos-plans__contact > a {
+  color: var(--color-navy);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .assetos-faq {
   padding-bottom: 20px;
 }
@@ -7466,6 +7600,14 @@ body.legal-page main {
 }
 
 @media (max-width: 1100px) {
+  .assetos-plans__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .assetos-plan-card:last-child {
+    grid-column: 1 / -1;
+  }
+
   .assetos-overview__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -7544,8 +7686,23 @@ body.legal-page main {
 
   .assetos-overview__grid,
   .assetos-workflow-grid,
-  .assetos-fit-grid {
+  .assetos-fit-grid,
+  .assetos-plans__grid {
     grid-template-columns: 1fr;
+  }
+
+  .assetos-plan-card:last-child {
+    grid-column: auto;
+  }
+
+  .assetos-plan-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .assetos-plans__contact {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .assetos-fit-container {
