@@ -6867,7 +6867,24 @@ body.legal-page main {
   letter-spacing: -0.48px;
   line-height: 20px;
   text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
   white-space: nowrap;
+}
+
+.assetos-plan-card > a:hover,
+.assetos-plan-card > a:focus-visible {
+  transform: translateY(-1px);
+}
+
+.assetos-plan-card:not(.assetos-plan-card--featured) > a:hover,
+.assetos-plan-card:not(.assetos-plan-card--featured) > a:focus-visible {
+  color: var(--color-navy);
+  background: var(--color-gold);
+}
+
+.assetos-plan-card--featured > a:hover,
+.assetos-plan-card--featured > a:focus-visible {
+  background: #f0c323;
 }
 
 .assetos-cta__demo {
