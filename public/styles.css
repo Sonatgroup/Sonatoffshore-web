@@ -5999,6 +5999,11 @@ a {
   background: var(--color-dark-pearl);
 }
 
+.services-offerings__featured[id],
+.services-offering[id] {
+  scroll-margin-top: 100px;
+}
+
 .services-offerings__featured,
 .services-offering {
   display: grid;
@@ -7778,5 +7783,156 @@ body.legal-page main {
 
   .assetos-faq__list details p {
     font-size: 14px;
+  }
+}
+/* Product information request pages */
+.assetos-information-section {
+  padding: 12px 32px 48px;
+}
+
+.assetos-information-panel {
+  display: grid;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  border-radius: 28px;
+  color: var(--color-light);
+  background: var(--color-navy);
+}
+
+.assetos-information-copy h2 {
+  margin: 0 0 16px;
+  color: var(--color-light);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1.08;
+}
+
+.assetos-information-copy > p {
+  max-width: 48ch;
+  margin: 0 0 16px;
+  color: var(--color-light-blue);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.assetos-information-copy > .assetos-information-note {
+  max-width: 68ch;
+  margin-top: 28px;
+  font-size: 13px;
+}
+
+.assetos-information-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.assetos-information-form > label:not(.assetos-information-form__consent) {
+  display: grid;
+  gap: 7px;
+  color: var(--color-light);
+  font-size: 14px;
+}
+
+.assetos-information-form input:not([type="checkbox"]),
+.assetos-information-form textarea,
+.assetos-information-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(243, 243, 243, 0.35);
+  border-radius: 10px;
+  color: var(--color-navy);
+  background: var(--color-dark-pearl);
+  font: inherit;
+}
+
+.assetos-information-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.assetos-information-form__wide,
+.assetos-information-form__consent {
+  grid-column: 1 / -1;
+}
+
+.assetos-information-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--color-light-blue);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.assetos-information-form__consent input {
+  margin-top: 3px;
+  accent-color: var(--color-gold);
+}
+
+.assetos-information-form__consent a {
+  color: var(--color-gold);
+}
+
+.assetos-information-form > button {
+  min-height: 51px;
+  justify-self: start;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: var(--radius-button);
+  color: var(--color-navy);
+  background: var(--color-gold);
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.assetos-information-form > button:hover,
+.assetos-information-form > button:focus-visible {
+  background: #f0c323;
+  transform: translateY(-1px);
+}
+
+.assetos-information-page .assetos-landing-hero {
+  height: 448px;
+  min-height: 0;
+  padding: 128px 32px 44px;
+}
+
+@media (max-width: 760px) {
+  .assetos-information-section {
+    padding: 12px 12px 28px;
+  }
+
+  .assetos-information-panel {
+    padding: 28px 22px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    border-radius: 22px;
+  }
+
+  .assetos-information-form {
+    grid-template-columns: 1fr;
+  }
+
+  .assetos-information-form__wide,
+  .assetos-information-form__consent {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .assetos-information-page .assetos-landing-hero {
+    height: auto;
+    padding: 108px 22px 36px;
   }
 }
