@@ -1,20 +1,27 @@
-# SONAT Offshore
-
-Static implementation of the SONAT Offshore website, built section-by-section from the supplied Figma file.
+# SONAT Offshore website
 
 ## Local preview
 
-```sh
-python3 -m http.server 4173 --directory public
-```
+Serve the static files in `public/` with a local web server to preview the design.
 
-Open `http://localhost:4173`.
+## News content build
 
-## Cloudflare Pages
+News posts and categories are authored in the Sanity project `diimer9i`, dataset
+`production`. The dataset is public, so the website build needs no Sanity token.
 
-Create a Pages project connected to this repository with:
+Run `npm run build` to fetch published posts, copy the site to `dist/`, render
+the News listing and one static article page per post under `dist/articles/`,
+and add those article URLs to the sitemap. Drafts are not included. With no
+published posts, the News page keeps its empty-state message.
 
-- Build command: leave empty
-- Build output directory: `public`
+Cloudflare Pages settings for the Git-connected site:
 
-The included `wrangler.toml` also declares `public` as the Pages output directory for Wrangler-based deployments.
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Production branch: `main`
+
+For automatic updates after publishing Sanity content, create a Cloudflare Pages
+deploy hook and add it in Sanity Manage under API → Webhooks. Set the webhook
+dataset to `production`, the filter to `_type in ["blogPost", "blogCategory"]`,
+and include published document create, update, and delete events. The build
+only reads published documents, so draft edits do not appear on the website.
