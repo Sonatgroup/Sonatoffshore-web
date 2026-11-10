@@ -163,8 +163,9 @@ function portableTextHtml(blocks, contents) {
 }
 
 function renderSidebar(post, contents, canonicalUrl) {
+  const articlePath = new URL(canonicalUrl).pathname
   const toc = contents.length
-    ? `<div class="post-sidebar__contents"><h2>What’s Inside</h2><ol>${contents.map((item, index) => `<li><a href="#${escapeHtml(item.anchor || slugify(item.title))}">${escapeHtml(item.title)}</a></li>`).join('')}</ol></div>`
+    ? `<div class="post-sidebar__contents"><h2>What’s Inside</h2><ol>${contents.map((item) => `<li><a href="${escapeHtml(articlePath)}#${escapeHtml(item.anchor || slugify(item.title))}">${escapeHtml(item.title)}</a></li>`).join('')}</ol></div>`
     : ''
   const xUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(post.title || '')}`
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`
