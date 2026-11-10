@@ -3145,6 +3145,7 @@ a {
 .news-post-hero h1 {
   width: 936px;
   margin: 0;
+  color: var(--color-light);
   font-family: "Inter", Arial, sans-serif;
   font-size: 56px;
   font-weight: 600;
