@@ -3084,11 +3084,12 @@ a {
 
 .news-post-hero__backdrop img {
   position: absolute;
-  top: -97.54%;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 232.7%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .news-post-header {
