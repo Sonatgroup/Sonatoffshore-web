@@ -3369,13 +3369,9 @@ a {
   display: flex;
   width: 30px;
   height: 30px;
+  color: #1f1f1f;
   align-items: center;
   justify-content: center;
-}
-
-.post-sidebar__x {
-  border: 1.24px solid #1f1f1f;
-  border-radius: 50%;
 }
 
 .more-read {
@@ -4562,19 +4558,6 @@ a {
 
 .news-post-page .post-sidebar__inner {
   min-height: 0;
-}
-
-.news-post-page .post-sidebar__share button {
-  display: flex;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border: 1.24px solid #1f1f1f;
-  border-radius: 50%;
-  background: transparent;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 }
 
 .news-post-page .post-section h2 {
