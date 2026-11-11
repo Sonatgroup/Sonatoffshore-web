@@ -2613,6 +2613,21 @@ a {
   text-align: center;
 }
 
+.early-access-pill {
+  display: inline-flex;
+  min-height: 34px;
+  padding: 8px 14px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--color-dark-pearl);
+  background: var(--color-navy);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.26px;
+  line-height: 18px;
+}
+
 .digital-platform-hero__content h1 {
   margin: 0;
   color: var(--color-navy);
