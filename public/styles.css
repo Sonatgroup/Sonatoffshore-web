@@ -6221,10 +6221,9 @@ a {
   padding: 8px 16px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-dark-pearl);
   border-radius: 999px;
-  color: var(--color-navy);
-  background: var(--color-dark-pearl);
+  color: var(--color-dark-pearl);
+  background: var(--color-slate-blue);
   font-family: "IBM Plex Sans", Arial, sans-serif;
   font-size: 14px;
   letter-spacing: -0.28px;
@@ -6240,8 +6239,8 @@ a {
 
 .services-offering__tag--link:hover,
 .services-offering__tag--link:focus-visible {
-  color: var(--color-navy);
-  background: #f3f0e9;
+  color: var(--color-dark-pearl);
+  background: #40596a;
 }
 
 .services-approach {
