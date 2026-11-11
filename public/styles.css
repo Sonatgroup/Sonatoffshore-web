@@ -6228,8 +6228,8 @@ a {
   justify-content: center;
   border: 1px solid var(--color-gold);
   border-radius: 999px;
-  color: var(--color-gold);
-  background: var(--color-slate-blue);
+  color: var(--color-navy);
+  background: var(--color-gold);
   font-family: "IBM Plex Sans", Arial, sans-serif;
   font-size: 14px;
   letter-spacing: -0.28px;
@@ -6246,7 +6246,7 @@ a {
 .services-offering__tag--link:hover,
 .services-offering__tag--link:focus-visible {
   color: var(--color-navy);
-  background: var(--color-gold);
+  background: #f0c500;
 }
 
 .services-approach {
