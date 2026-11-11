@@ -6249,20 +6249,6 @@ a {
   background: var(--color-gold);
 }
 
-.services-offering__new {
-  position: absolute;
-  top: 0;
-  right: 30px;
-  padding: 2px 8px;
-  border-radius: 0 0 4px 4px;
-  color: var(--color-navy);
-  background: var(--color-light);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  line-height: 16px;
-}
-
 .services-approach {
   display: flex;
   width: 625px;
@@ -6382,10 +6368,6 @@ a {
     min-height: 34px;
     padding: 6px 12px;
     font-size: 13px;
-  }
-
-  .services-offering__new {
-    right: 18px;
   }
 
   .services-offering__copy,
