@@ -5605,6 +5605,10 @@ a {
     height: 820px;
   }
 
+  .about-page-hero__background {
+    object-position: 35% center;
+  }
+
   .about-founder-section {
     padding: 18px;
   }
