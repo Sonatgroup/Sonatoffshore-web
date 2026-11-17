@@ -1,0 +1,9 @@
+name = "sonat-offshore-email"
+main = "workers/email-gateway.js"
+compatibility_date = "2026-11-17"
+workers_dev = false
+
+[[send_email]]
+name = "EMAIL"
+destination_address = "info@sonatoffshore.com"
+allowed_sender_addresses = ["info@sonatoffshore.com"]

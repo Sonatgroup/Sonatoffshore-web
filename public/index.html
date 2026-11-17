@@ -383,12 +383,12 @@
             </address>
           </div>
 
-          <form class="contact-form" data-node-id="234:8387">
+          <form class="contact-form" data-node-id="234:8387" data-email-form="intro">
             <h3 data-node-id="234:8406">Schedule your free Intro Call</h3>
             <div class="contact-form__fields" data-node-id="234:8388">
-              <input type="text" name="name" placeholder="Full Name" aria-label="Full Name" autocomplete="name" />
+              <input type="text" name="name" placeholder="Full Name" aria-label="Full Name" autocomplete="name" required />
               <input type="tel" name="phone" placeholder="Phone No." aria-label="Phone number" autocomplete="tel" />
-              <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" />
+              <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required />
               <input
                 type="text"
                 name="company"
@@ -397,7 +397,7 @@
                 autocomplete="organization"
               />
             </div>
-            <button type="button" data-node-id="234:8402">Discuss Your Needs</button>
+            <button type="submit" data-node-id="234:8402">Discuss Your Needs</button>
           </form>
         </div>
       </section>
@@ -522,7 +522,7 @@
               <h2 id="newsletter-title">Offshore insights, delivered to your inbox.</h2>
               <p>Subscribe for SONAT updates on drilling operations, asset integrity and digital platforms.</p>
             </div>
-            <form class="footer-newsletter__form">
+            <form class="footer-newsletter__form" data-email-form="newsletter">
               <label class="visually-hidden" for="newsletter-email">Email address</label>
               <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Insert Your Email to subscribe" required />
               <button type="submit" aria-label="Subscribe">
@@ -583,5 +583,6 @@
         </div>
       </footer>
     </main>
+      <script src="forms.js" defer></script>
   </body>
 </html>

@@ -1,3 +1,8 @@
 name = "sonat-offshore"
 pages_build_output_dir = "./dist"
+compatibility_date = "2026-11-17"
+
+[[services]]
+binding = "EMAIL_SERVICE"
+service = "sonat-offshore-email"
 
