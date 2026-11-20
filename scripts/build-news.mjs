@@ -7,7 +7,7 @@ const sourceDir = path.join(projectRoot, 'public')
 const outputDir = path.join(projectRoot, 'dist')
 const projectId = process.env.SANITY_PROJECT_ID || 'diimer9i'
 const dataset = process.env.SANITY_DATASET || 'production'
-const siteOrigin = process.env.SITE_ORIGIN || 'https://sonat-offshore.pages.dev'
+const siteOrigin = process.env.SITE_ORIGIN || 'https://www.sonatoffshore.com'
 
 const query = `*[_type == "blogPost" && defined(slug.current) && defined(publishedAt)] | order(publishedAt desc) {
   _id,
