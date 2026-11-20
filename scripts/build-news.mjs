@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url'
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sourceDir = path.join(projectRoot, 'public')
 const outputDir = path.join(projectRoot, 'dist')
-const projectId = process.env.SANITY_PROJECT_ID || 'dimer9i'
+const projectId = process.env.SANITY_PROJECT_ID || 'diimer9i'
 const dataset = process.env.SANITY_DATASET || 'production'
 const siteOrigin = process.env.SITE_ORIGIN || 'https://www.sonatoffshore.com'
 
