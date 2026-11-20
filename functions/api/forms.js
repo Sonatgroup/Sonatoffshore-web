@@ -76,6 +76,28 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: false, message: "Request is too large." }, 413);
   }
 
+  const turnstileSecret = env.TURNSTILE_SECRET_KEY;
+  const turnstileToken = clean(payload["cf-turnstile-response"], 4096);
+  if (!turnstileSecret || !turnstileToken) {
+    return json({ ok: false, message: "Please complete the security check and try again." }, 403);
+  }
+
+  try {
+    const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
+    });
+    const result = await verification.json();
+    const allowedHostnames = new Set(["sonatoffshore.com", "www.sonatoffshore.com"]);
+    if (!verification.ok || result.success !== true || !allowedHostnames.has(result.hostname)) {
+      return json({ ok: false, message: "The security check expired. Please try again." }, 403);
+    }
+  } catch (error) {
+    console.error("Turnstile verification failed:", error?.message || "unknown");
+    return json({ ok: false, message: "Security verification is temporarily unavailable. Please try again." }, 503);
+  }
+
   // Quietly accept honeypot submissions without sending an email.
   if (clean(payload.website, 200)) return json({ ok: true });
 

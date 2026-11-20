@@ -1,4 +1,50 @@
 (() => {
+  const turnstileSiteKey = "0x4AAAAAAGK3nLYFafABL6rc";
+  const widgets = new WeakMap();
+  let turnstileReady;
+
+  function loadTurnstile() {
+    if (window.turnstile) return Promise.resolve(window.turnstile);
+    if (!turnstileReady) {
+      turnstileReady = new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[src^="https://challenges.cloudflare.com/turnstile/v0/api.js"]');
+        if (existing) {
+          existing.addEventListener("load", () => resolve(window.turnstile), { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+        const script = document.createElement("script");
+        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+        script.async = true;
+        script.defer = true;
+        script.onload = () => resolve(window.turnstile);
+        script.onerror = reject;
+        document.head.append(script);
+      });
+    }
+    return turnstileReady;
+  }
+
+  function addTurnstile(form) {
+    const container = document.createElement("div");
+    container.className = "cf-turnstile form-turnstile";
+    container.setAttribute("aria-label", "Security verification");
+    const button = form.querySelector('button[type="submit"]');
+    if (button) button.before(container);
+    else form.append(container);
+
+    loadTurnstile().then((api) => {
+      if (!api || !container.isConnected) return;
+      const id = api.render(container, {
+        sitekey: turnstileSiteKey,
+        callback: () => form.removeAttribute("data-turnstile-error"),
+        "expired-callback": () => api.reset(widgets.get(form)),
+        "error-callback": () => form.setAttribute("data-turnstile-error", "true"),
+      });
+      widgets.set(form, id);
+    }).catch(() => form.setAttribute("data-turnstile-error", "true"));
+  }
+
   const formTypes = new Map([
     ["contact-form", "intro"],
     ["contact-page-form", "contact"],
@@ -40,6 +86,14 @@
 
   async function submit(form, type) {
     if (!form.reportValidity()) return;
+    const turnstileResponse = form.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!turnstileResponse) {
+      const status = statusFor(form);
+      status.hidden = false;
+      status.dataset.state = "error";
+      status.textContent = "Please complete the security check and try again.";
+      return;
+    }
     const button = form.querySelector('button[type="submit"]');
     const status = statusFor(form);
     const originalText = button?.textContent;
@@ -72,6 +126,8 @@
       status.dataset.state = "error";
       status.textContent = error.message || "We could not send your information. Please try again or email info@sonatoffshore.com.";
     } finally {
+      const api = window.turnstile;
+      if (api && widgets.has(form)) api.reset(widgets.get(form));
       if (button) {
         button.disabled = false;
         button.removeAttribute("aria-busy");
@@ -84,6 +140,7 @@
     const type = getType(form);
     if (!type) return;
     addHoneypot(form);
+    addTurnstile(form);
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       submit(form, type);
